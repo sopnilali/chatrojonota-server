@@ -9,7 +9,7 @@ const verifyToken = (req, res, next)=>{
     }
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded)=> {
         if(err){
-            return res.status(401).json({message: 'unauthorized access'})
+            return res.status(401).json({message: 'unauthorized access error'})
         }
         req.user = decoded
         next();
